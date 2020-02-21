@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "aae023c7-5ba5-42dc-9312-34d8bdd1252a",
+		"name": "portal_cautivo.SOPHOS_JavaScript",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"mutation createUser($name: String!, $email: String!, $phone: String!) {createUser(name: $name, email: $email, phone: $phone) {...userFields}} fragment userFields on User { name email phone password}\",\n    \"variables\": {\n        \"name\": \"binni zenobio cordova leandro\",\n        \"email\": \"binni_2000_cordova@gmail.com\",\n        \"phone\": \"936133268\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/graphql?query={user(email:\"binni_2000_cordova@gmail.com\",phone:\"936133268\"){name,email,phone}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "{user(email:\"binni_2000_cordova@gmail.com\",phone:\"936133268\"){name,email,phone}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
