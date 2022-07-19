@@ -15,7 +15,7 @@
     "express-graphql": "^0.8.0",
     "graphql": "^14.4.2",
     "http-parser-js": "^0.5.2",
-    "properties-reader": "^0.2.0",
+    "properties-reader": "^2.2.0",
     "random": "^2.1.1",
     "request": "^2.88.0",
     "xml2json": "^0.12.0"
